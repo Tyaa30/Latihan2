@@ -1,31 +1,32 @@
-import java.util.ArrayList;
-/**
- * @author anant
- * @created 23/03/2023 - 20:36
- * @project Praktikum2
- */
+import java.util.LinkedList;
 
 public class latihan2 {
-        public static void main(String[] args) {
-            // Membuat objek ArrayList
-            ArrayList<String> hewan = new ArrayList<String>();
-            // Menambahkan elemen ke ArrayList
-            hewan.add("Sapi");
-            hewan.add("Kelinci");
-            hewan.add("Kambing");
-            hewan.add("Unta");
-            hewan.add("Domba");
+    public static void main(String[] args) {
+        // Membuat objek LinkedList Hewan dan menambahkan beberapa data
+        LinkedList<String> hewan = new LinkedList<>();
+       hewan.add("Sapi");
+       hewan.add("Kelinci");
+       hewan.add("Kambing");
+       hewan.add("Unta");
+       hewan.add("Domba");
 
-            // Menampilkan isi ArrayList menggunakan loop for
-            System.out.println("Contoh Hewan: " + hewan);
+        System.out.println("Data Hewan Sebelum Evolusi: "+hewan);
 
-            //hapus index
-            ArrayList<String> delete = new ArrayList<String>();
-            String element1 = hewan.remove(0);
-            delete.add(element1);
-            String element2 = hewan.remove(3);
-            delete.add(element2);
-            System.out.println("Setelah menghapus elemen kedua: " + hewan);
-            System.out.println("Elemen yang dihapus adalah: "+delete);
+        // Membuat objek LinkedList DeleteHewan dan menambahkan beberapa data
+        LinkedList<String> deleteHewan = new LinkedList<>();
+        deleteHewan.add("Kelinci");
+        deleteHewan.add("Kambing");
+        deleteHewan.add("Unta");
+
+        System.out.println("Hewan yang dihapus: "+deleteHewan);
+
+
+        // Menghapus data pada LinkedList Hewan yang sama dengan data pada LinkedList DeleteHewan
+        for (String data : deleteHewan) {
+            hewan.remove(data);
         }
+
+        // Menampilkan LinkedList Hewan setelah penghapusan
+        System.out.println("LinkedList Hewan setelah penghapusan: "+hewan);
+    }
 }
